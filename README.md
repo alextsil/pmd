@@ -1,6 +1,6 @@
 # PMD
 
-[![Build Status](https://travis-ci.org/pmd/pmd.svg?branch=master)](https://travis-ci.org/pmd/pmd)
+[![Build Status](https://travis-ci.org/alextsil/pmd.svg?branch=master)](https://travis-ci.org/pmd/pmd)
 
 ## About
 
