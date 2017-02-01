@@ -12,7 +12,7 @@ public class NamingRulesTest extends SimpleAggregatorTst {
 
     @Override
     public void setUp() {
-        addRule(RULESET, "AbstractNaming");
+        addRule(RULESET, "AbstractNaming"); //ennoei AbstractNaming.xml to opoio exei code kai #violations expected
         addRule(RULESET, "AvoidDollarSigns");
         addRule(RULESET, "AvoidFieldNameMatchingMethodName");
         addRule(RULESET, "AvoidFieldNameMatchingTypeName");

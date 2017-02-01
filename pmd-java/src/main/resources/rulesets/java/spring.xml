@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<ruleset name="Spring custom rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>Rules for Spring Framework</description>
+
+    <rule name="ClassNameShouldMatchAnnotation"
+          message="todo"
+          class="net.sourceforge.pmd.lang.java.rule.spring.ClassNameShouldMatchAnnotation">
+        <description>
+            todo
+        </description>
+        <priority>3</priority>
+
+        <example>
+            <![CDATA[
+todo
+   ]]>
+        </example>
+
+    </rule>
+</ruleset>
