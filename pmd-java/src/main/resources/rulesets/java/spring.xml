@@ -42,4 +42,27 @@ private TicketService ticketService;
         </example>
 
     </rule>
+
+    <rule name="EntityShouldContainNoArgsConstructor"
+          message="Classes annotated with @Entity should always contain a no-args constructor"
+          class="net.sourceforge.pmd.lang.java.rule.spring.EntityShouldContainNoArgsConstructor">
+        <description>
+            Classes annotated with @Entity should always contain a no-args constructor
+        </description>
+        <priority>2</priority>
+
+        <example>
+            <![CDATA[
+@Entity
+public class Task
+{
+public Task ()
+    {
+    }
+  }
+   ]]>
+        </example>
+
+    </rule>
+
 </ruleset>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+    <test-code>
+        <description><![CDATA[
+Classes annotated with @Entity contains a no-args constructor
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Entity
+public class Task
+{
+public Task ()
+    {
+    }
+  }
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Classes annotated with @Entity does not contain a no-args constructor
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Entity
+public class Task
+{
+public Task (int param1)
+    {
+    }
+  }
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Classes annotated with @Entity contain a no-args constructor and another constructor
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Entity
+public class Task
+{
+public Task ()
+    {
+    }
+public Task (int param1)
+    {
+    }
+  }
+     ]]></code>
+    </test-code>
+
+</test-data>
