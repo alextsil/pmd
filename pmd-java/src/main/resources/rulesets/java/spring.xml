@@ -8,16 +8,17 @@
     <description>Rules for Spring Framework</description>
 
     <rule name="ClassNameShouldMatchAnnotation"
-          message="todo"
+          message="Class name should contain annotation name"
           class="net.sourceforge.pmd.lang.java.rule.spring.ClassNameShouldMatchAnnotation">
         <description>
-            todo
+            Class name should contain annotation name
         </description>
         <priority>3</priority>
 
         <example>
             <![CDATA[
-todo
+@Service
+public class ExampleService {}
    ]]>
         </example>
 

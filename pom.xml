@@ -261,6 +261,7 @@ Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code
         <javacc.version>5.0</javacc.version>
         <surefire.version>2.18.1</surefire.version>
         <checkstyle.version>2.17</checkstyle.version>
+        <checkstyle.skip>true</checkstyle.skip>
         <pmd.plugin.version>3.7</pmd.plugin.version>
         <java.version>1.8</java.version>
         <jacoco.version>0.7.5.201505241946</jacoco.version>

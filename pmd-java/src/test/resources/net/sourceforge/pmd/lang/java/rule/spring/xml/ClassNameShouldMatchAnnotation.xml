@@ -3,12 +3,66 @@
 
     <test-code>
         <description><![CDATA[
-todo
+Class name contains annotation name
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Service
+public class ExampleService {}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Class name should contain annotation name
      ]]></description>
         <expected-problems>1</expected-problems>
         <code><![CDATA[
 @Service
-public class ExampleService {}
+public class ExampleBadIdentifier {}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Class name contains annotation name
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Controller
+public class ExampleController {}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Class name should contain annotation name
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Controller
+public class ExampleBadName {}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Class name should contain annotation name. Reverse not enforced
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+public class ExampleController {}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Class name should contain annotation name. Wrong match
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Service
+public class ExampleController {}
      ]]></code>
     </test-code>
 

@@ -1,37 +1,46 @@
 package net.sourceforge.pmd.lang.java.rule.spring;
 
 import net.sourceforge.pmd.lang.java.ast.ASTClassOrInterfaceDeclaration;
-import net.sourceforge.pmd.lang.java.ast.ASTClassOrInterfaceType;
 import net.sourceforge.pmd.lang.java.ast.ASTMarkerAnnotation;
 import net.sourceforge.pmd.lang.java.ast.ASTMethodDeclaration;
+import net.sourceforge.pmd.lang.java.ast.ASTTypeDeclaration;
 import net.sourceforge.pmd.lang.java.rule.AbstractJavaRule;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
+//Only for single class or interface declaration per file
 public class ClassNameShouldMatchAnnotation extends AbstractJavaRule
 {
 
     @Override
-    public Object visit ( ASTClassOrInterfaceType node, Object data )
+    public Object visit ( ASTTypeDeclaration typeDeclaration, Object data )
     {
-        List<ASTMarkerAnnotation> annotations = node.findDescendantsOfType( ASTMarkerAnnotation.class );
-        if ( !annotations.isEmpty() )
-        {
-            super.addViolation( data, node );
-        }
-        return super.visit( node, data );
-    }
+        List<String> annotationIdentifiersToCheck = new ArrayList<>();
+        annotationIdentifiersToCheck.add( "Controller" );
+        annotationIdentifiersToCheck.add( "Service" );
+        annotationIdentifiersToCheck.add( "Repository" );
 
-    @Override
-    public Object visit ( ASTClassOrInterfaceDeclaration node, Object data )
-    {
-        List<ASTMarkerAnnotation> annotations = node.findDescendantsOfType( ASTMarkerAnnotation.class );
-        if ( !annotations.isEmpty() )
+        List<String> annotationsAsString = typeDeclaration.findDescendantsOfType( ASTMarkerAnnotation.class )
+                .stream().map( a -> a.jjtGetLastToken().toString() ).collect( Collectors.toList() );
+
+        String classOrInterfaceIdentifier = typeDeclaration.findDescendantsOfType( ASTClassOrInterfaceDeclaration.class )
+                .get( 0 ).getImage();
+
+        annotationIdentifiersToCheck.forEach( anId ->
         {
-            super.addViolation( data, node );
-        }
-        return super.visit( node, data );
+            if ( annotationsAsString.contains( anId ) )
+            {
+                if ( !classOrInterfaceIdentifier.contains( anId ) )
+                {
+                    super.addViolation( data, typeDeclaration );
+                }
+            }
+        } );
+
+        return super.visit( typeDeclaration, data );
     }
 
     @Override
