@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+    <test-code>
+        <description><![CDATA[
+Class name contains variable name
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Service
+public class ExampleService {
+private TicketService ticketService;
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Class name should contain variable name
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Service
+public class ExampleService {
+private TicketService ticketNotCorrectName;
+}
+     ]]></code>
+    </test-code>
+
+</test-data>

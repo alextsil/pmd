@@ -2,7 +2,6 @@ package net.sourceforge.pmd.lang.java.rule.spring;
 
 import net.sourceforge.pmd.lang.java.ast.ASTClassOrInterfaceDeclaration;
 import net.sourceforge.pmd.lang.java.ast.ASTMarkerAnnotation;
-import net.sourceforge.pmd.lang.java.ast.ASTMethodDeclaration;
 import net.sourceforge.pmd.lang.java.ast.ASTTypeDeclaration;
 import net.sourceforge.pmd.lang.java.rule.AbstractJavaRule;
 
@@ -43,9 +42,4 @@ public class ClassNameShouldMatchAnnotation extends AbstractJavaRule
         return super.visit( typeDeclaration, data );
     }
 
-    @Override
-    public Object visit ( ASTMethodDeclaration node, Object data )
-    {
-        return super.visit( node, data );
-    }
 }

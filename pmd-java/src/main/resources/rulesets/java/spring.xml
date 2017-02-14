@@ -23,4 +23,23 @@ public class ExampleService {}
         </example>
 
     </rule>
+
+    <rule name="VariableNameShouldMatchAnnotatedClass"
+          message="Variable name should match annotated class"
+          class="net.sourceforge.pmd.lang.java.rule.spring.VariableNameShouldMatchAnnotatedClass">
+        <description>
+            Variable name should match annotated class
+        </description>
+        <priority>3</priority>
+
+        <example>
+            <![CDATA[
+@Service
+public class ExampleService {
+private TicketService ticketService;
+}
+   ]]>
+        </example>
+
+    </rule>
 </ruleset>

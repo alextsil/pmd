@@ -12,6 +12,7 @@ public class SpringRulesTest extends SimpleAggregatorTst
     public void setUp ()
     {
         addRule( RULESET, "ClassNameShouldMatchAnnotation" );
+        addRule( RULESET, "VariableNameShouldMatchAnnotatedClass" );
     }
 
 }
