@@ -65,4 +65,23 @@ public Task ()
 
     </rule>
 
+    <rule name="ClassShouldContainOnlyOneComponentAnnotation"
+          message="Classes annotated with @Entity should always contain a no-args constructor"
+          class="net.sourceforge.pmd.lang.java.rule.spring.ClassShouldContainOnlyOneComponentAnnotation">
+        <description>
+            Class should only contain one component annotation
+        </description>
+        <priority>1</priority>
+
+        <example>
+            <![CDATA[
+@Service
+public class TaskService
+{
+}
+   ]]>
+        </example>
+
+    </rule>
+
 </ruleset>
