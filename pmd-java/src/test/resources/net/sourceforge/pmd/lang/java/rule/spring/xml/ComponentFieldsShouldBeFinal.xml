@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+    <test-code>
+        <description><![CDATA[
+Field is declared final
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Service
+public class TaskService
+{
+private Other other;
+private final TaskRepository taskRepository;
+
+@Autowired
+TaskService(TaskRepository taskRepository) {
+this.taskRepository = taskRepository;
+}
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Field is not declared final
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Service
+public class TaskService
+{
+private Other other;
+private TaskRepository taskRepository;
+
+@Autowired
+TaskService(TaskRepository taskRepository) {
+this.taskRepository = taskRepository;
+}
+}
+     ]]></code>
+    </test-code>
+
+</test-data>

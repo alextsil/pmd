@@ -112,4 +112,29 @@ this.taskRepository = taskRepository;
 
     </rule>
 
+    <rule name="ComponentFieldsShouldBeFinal"
+          message="Component fields should be final"
+          class="net.sourceforge.pmd.lang.java.rule.spring.ComponentFieldsShouldBeFinal">
+        <description>
+            Component fields should be final
+        </description>
+        <priority>2</priority>
+
+        <example>
+            <![CDATA[
+@Service
+public class TaskService
+{
+private final TaskRepository taskRepository;
+
+@Autowired
+TaskService(TaskRepository taskRepository) {
+this.taskRepository = taskRepository;
+}
+}
+   ]]>
+        </example>
+
+    </rule>
+
 </ruleset>
