@@ -15,6 +15,7 @@ public class SpringRulesTest extends SimpleAggregatorTst
         addRule( RULESET, "VariableNameShouldMatchAnnotatedClass" );
         addRule( RULESET, "EntityShouldContainNoArgsConstructor" );
         addRule( RULESET, "ClassShouldContainOnlyOneComponentAnnotation" );
+        addRule( RULESET, "FieldShouldNotHaveAutowired" );
     }
 
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+    <test-code>
+        <description><![CDATA[
+taskRepository is autowired properly
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Service
+public class TaskService
+{
+private TaskRepository taskRepository;
+
+@Autowired
+TaskService(TaskRepository taskRepository) {
+this.taskRepository = taskRepository;
+}
+
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+taskRepository is autowired properly
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Service
+public class TaskService
+{
+private TaskRepository taskRepository;
+
+@Inject
+TaskService(TaskRepository taskRepository) {
+this.taskRepository = taskRepository;
+}
+
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+taskRepository is not autowired properly
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Service
+public class TaskService
+{
+@Autowired
+private TaskRepository taskRepository;
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+taskRepository is not autowired properly
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Service
+public class TaskService
+{
+@Inject
+private TaskRepository taskRepository;
+}
+     ]]></code>
+    </test-code>
+
+</test-data>

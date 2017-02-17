@@ -84,4 +84,32 @@ public class TaskService
 
     </rule>
 
+    <rule name="FieldShouldNotHaveAutowired"
+          message="Fields should not be annotated with @Autowired or @Injected.
+          They should be moved in the constructor instead."
+          class="net.sourceforge.pmd.lang.java.rule.spring.FieldShouldNotHaveAutowired">
+        <description>
+            Fields should not be annotated with @Autowired or @Injected.
+            They should be moved in the constructor instead.
+        </description>
+        <priority>2</priority>
+
+        <example>
+            <![CDATA[
+@Service
+public class TaskService
+{
+private TaskRepository taskRepository;
+
+@Autowired
+TaskService(TaskRepository taskRepository) {
+this.taskRepository = taskRepository;
+}
+
+}
+   ]]>
+        </example>
+
+    </rule>
+
 </ruleset>
