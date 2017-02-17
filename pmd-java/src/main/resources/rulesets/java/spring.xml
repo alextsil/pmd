@@ -10,7 +10,7 @@
     <rule name="ClassNameShouldMatchAnnotation"
           language="java"
           since="5.6"
-          externalInfoUrl="www.google.com"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/basic.html#ClassNameShouldMatchAnnotation"
           class="net.sourceforge.pmd.lang.java.rule.spring.ClassNameShouldMatchAnnotationRule">
         <description>
             Class name should contain annotation name
@@ -29,7 +29,7 @@ public class ExampleService {}
     <rule name="VariableNameShouldMatchAnnotatedClass"
           language="java"
           since="5.6"
-          externalInfoUrl="www.google.com"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/basic.html#VariableNameShouldMatchAnnotatedClass"
           message="Variable name should match annotated class"
           class="net.sourceforge.pmd.lang.java.rule.spring.VariableNameShouldMatchAnnotatedClassRule">
         <description>
@@ -51,7 +51,7 @@ private TicketService ticketService;
     <rule name="EntityShouldContainNoArgsConstructor"
           language="java"
           since="5.6"
-          externalInfoUrl="www.google.com"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/basic.html#EntityShouldContainNoArgsConstructor"
           message="Classes annotated with @Entity should always contain a no-args constructor"
           class="net.sourceforge.pmd.lang.java.rule.spring.EntityShouldContainNoArgsConstructorRule">
         <description>
@@ -76,7 +76,7 @@ public Task ()
     <rule name="ClassShouldContainOnlyOneComponentAnnotation"
           language="java"
           since="5.6"
-          externalInfoUrl="www.google.com"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/basic.html#ClassShouldContainOnlyOneComponentAnnotation"
           message="Classes annotated with @Entity should always contain a no-args constructor"
           class="net.sourceforge.pmd.lang.java.rule.spring.ClassShouldContainOnlyOneComponentAnnotationRule">
         <description>
@@ -98,7 +98,7 @@ public class TaskService
     <rule name="FieldShouldNotHaveAutowired"
           language="java"
           since="5.6"
-          externalInfoUrl="www.google.com"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/basic.html#FieldShouldNotHaveAutowired"
           message="Fields should not be annotated with @Autowired or @Injected.
           They should be moved in the constructor instead."
           class="net.sourceforge.pmd.lang.java.rule.spring.FieldShouldNotHaveAutowiredRule">
@@ -129,7 +129,7 @@ this.taskRepository = taskRepository;
     <rule name="ComponentFieldsShouldBeFinal"
           language="java"
           since="5.6"
-          externalInfoUrl="www.google.com"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/basic.html#ComponentFieldsShouldBeFinal"
           message="Component fields should be final"
           class="net.sourceforge.pmd.lang.java.rule.spring.ComponentFieldsShouldBeFinalRule">
         <description>
