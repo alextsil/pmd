@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class VariableNameShouldMatchAnnotatedClass extends AbstractJavaRule
+public class VariableNameShouldMatchAnnotatedClassRule extends AbstractJavaRule
 {
 
     @Override

@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 
-public class EntityShouldContainNoArgsConstructor extends AbstractJavaRule
+public class EntityShouldContainNoArgsConstructorRule extends AbstractJavaRule
 {
 
     @Override

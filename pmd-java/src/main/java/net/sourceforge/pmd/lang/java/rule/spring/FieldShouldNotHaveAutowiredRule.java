@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class FieldShouldNotHaveAutowired extends AbstractJavaRule
+public class FieldShouldNotHaveAutowiredRule extends AbstractJavaRule
 {
 
     @Override

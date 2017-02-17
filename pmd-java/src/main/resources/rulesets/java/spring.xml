@@ -8,8 +8,10 @@
     <description>Rules for Spring Framework</description>
 
     <rule name="ClassNameShouldMatchAnnotation"
-          message="Class name should contain annotation name"
-          class="net.sourceforge.pmd.lang.java.rule.spring.ClassNameShouldMatchAnnotation">
+          language="java"
+          since="5.6"
+          externalInfoUrl="www.google.com"
+          class="net.sourceforge.pmd.lang.java.rule.spring.ClassNameShouldMatchAnnotationRule">
         <description>
             Class name should contain annotation name
         </description>
@@ -25,8 +27,11 @@ public class ExampleService {}
     </rule>
 
     <rule name="VariableNameShouldMatchAnnotatedClass"
+          language="java"
+          since="5.6"
+          externalInfoUrl="www.google.com"
           message="Variable name should match annotated class"
-          class="net.sourceforge.pmd.lang.java.rule.spring.VariableNameShouldMatchAnnotatedClass">
+          class="net.sourceforge.pmd.lang.java.rule.spring.VariableNameShouldMatchAnnotatedClassRule">
         <description>
             Variable name should match annotated class
         </description>
@@ -44,8 +49,11 @@ private TicketService ticketService;
     </rule>
 
     <rule name="EntityShouldContainNoArgsConstructor"
+          language="java"
+          since="5.6"
+          externalInfoUrl="www.google.com"
           message="Classes annotated with @Entity should always contain a no-args constructor"
-          class="net.sourceforge.pmd.lang.java.rule.spring.EntityShouldContainNoArgsConstructor">
+          class="net.sourceforge.pmd.lang.java.rule.spring.EntityShouldContainNoArgsConstructorRule">
         <description>
             Classes annotated with @Entity should always contain a no-args constructor
         </description>
@@ -66,8 +74,11 @@ public Task ()
     </rule>
 
     <rule name="ClassShouldContainOnlyOneComponentAnnotation"
+          language="java"
+          since="5.6"
+          externalInfoUrl="www.google.com"
           message="Classes annotated with @Entity should always contain a no-args constructor"
-          class="net.sourceforge.pmd.lang.java.rule.spring.ClassShouldContainOnlyOneComponentAnnotation">
+          class="net.sourceforge.pmd.lang.java.rule.spring.ClassShouldContainOnlyOneComponentAnnotationRule">
         <description>
             Class should only contain one component annotation
         </description>
@@ -85,9 +96,12 @@ public class TaskService
     </rule>
 
     <rule name="FieldShouldNotHaveAutowired"
+          language="java"
+          since="5.6"
+          externalInfoUrl="www.google.com"
           message="Fields should not be annotated with @Autowired or @Injected.
           They should be moved in the constructor instead."
-          class="net.sourceforge.pmd.lang.java.rule.spring.FieldShouldNotHaveAutowired">
+          class="net.sourceforge.pmd.lang.java.rule.spring.FieldShouldNotHaveAutowiredRule">
         <description>
             Fields should not be annotated with @Autowired or @Injected.
             They should be moved in the constructor instead.
@@ -113,8 +127,11 @@ this.taskRepository = taskRepository;
     </rule>
 
     <rule name="ComponentFieldsShouldBeFinal"
+          language="java"
+          since="5.6"
+          externalInfoUrl="www.google.com"
           message="Component fields should be final"
-          class="net.sourceforge.pmd.lang.java.rule.spring.ComponentFieldsShouldBeFinal">
+          class="net.sourceforge.pmd.lang.java.rule.spring.ComponentFieldsShouldBeFinalRule">
         <description>
             Component fields should be final
         </description>

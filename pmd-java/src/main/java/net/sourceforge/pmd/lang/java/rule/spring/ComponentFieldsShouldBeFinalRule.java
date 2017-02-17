@@ -10,7 +10,7 @@ import java.util.List;
 
 
 //Based on correct names given to component classes (eg. TaskService, TicketService)s
-public class ComponentFieldsShouldBeFinal extends AbstractJavaRule
+public class ComponentFieldsShouldBeFinalRule extends AbstractJavaRule
 {
 
     @Override
