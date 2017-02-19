@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+    <test-code>
+        <description><![CDATA[
+        Identifiers match
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Controller
+public class TaskController
+{
+    public ResponseEntity getTaskById ( @PathVariable ( "id" ) Long id ) {
+}
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+        Identifiers  don't match
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Controller
+public class TaskController
+{
+    public ResponseEntity getTaskById ( @PathVariable ( "NoMatch" ) Long id ) {
+}
+}
+     ]]></code>
+    </test-code>
+
+</test-data>

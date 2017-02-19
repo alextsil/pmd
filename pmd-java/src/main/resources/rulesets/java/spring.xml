@@ -207,4 +207,28 @@ public class TaskController
         </example>
 
     </rule>
+
+    <rule name="PathVariableIdentifierShouldMatch"
+          language="java"
+          since="5.6"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/spring.html#PathVariableIdentifierShouldMatch"
+          message="If @PathVariable is present, its identifier should match the variable's identifier"
+          class="net.sourceforge.pmd.lang.java.rule.spring.PathVariableIdentifierShouldMatchRule">
+        <description>
+            If @PathVariable is present, its identifier should match the variable's identifier
+        </description>
+        <priority>3</priority>
+
+        <example>
+            <![CDATA[
+@Controller
+public class TaskController
+{
+public ResponseEntity getTaskById ( @PathVariable ( "id" ) Long id ) {
+}
+}
+   ]]>
+        </example>
+
+    </rule>
 </ruleset>

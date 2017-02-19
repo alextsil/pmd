@@ -19,6 +19,7 @@ public class SpringRulesTest extends SimpleAggregatorTst
         addRule( RULESET, "ComponentFieldsShouldBeFinal" );
         addRule( RULESET, "ResponseEntityMethodShouldBeAnnotated" );
         addRule( RULESET, "RequestMappingMethodShouldBePublic" );
+        addRule( RULESET, "PathVariableIdentifierShouldMatch" );
     }
 
 }
