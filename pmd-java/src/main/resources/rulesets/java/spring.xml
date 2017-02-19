@@ -181,4 +181,30 @@ public class TaskController
 
     </rule>
 
+    <rule name="RequestMappingMethodShouldBePublic"
+          language="java"
+          since="5.6"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/spring.html#RequestMappingMethodShouldBePublic"
+          message="Methods annotated with @RequestMapping should be public"
+          class="net.sourceforge.pmd.lang.java.rule.spring.RequestMappingMethodShouldBePublicRule">
+        <description>
+            Methods annotated with @RequestMapping should be public
+        </description>
+        <priority>1</priority>
+
+        <example>
+            <![CDATA[
+@Controller
+public class TaskController
+{
+@RequestMapping ( value = "api/task/newtask", method = RequestMethod.POST )
+    public ResponseEntity submitTask ()
+    {
+        return new ResponseEntity<>( HttpStatus.CREATED );
+    }
+}
+   ]]>
+        </example>
+
+    </rule>
 </ruleset>
