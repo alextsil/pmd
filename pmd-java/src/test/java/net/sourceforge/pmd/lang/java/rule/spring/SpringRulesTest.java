@@ -17,6 +17,7 @@ public class SpringRulesTest extends SimpleAggregatorTst
         addRule( RULESET, "ClassShouldContainOnlyOneComponentAnnotation" );
         addRule( RULESET, "FieldShouldNotHaveAutowired" );
         addRule( RULESET, "ComponentFieldsShouldBeFinal" );
+        addRule( RULESET, "ResponseEntityMethodShouldBeAnnotated" );
     }
 
 }

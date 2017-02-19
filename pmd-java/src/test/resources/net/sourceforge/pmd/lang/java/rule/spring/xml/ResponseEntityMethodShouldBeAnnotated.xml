@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data>
+
+    <test-code>
+        <description><![CDATA[
+Method is annotated properly
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Controller
+public class TaskController
+{
+@RequestMapping ( value = "api/task/newtask", method = RequestMethod.POST )
+    public ResponseEntity submitTask ()
+    {
+        return new ResponseEntity<>( HttpStatus.CREATED );
+    }
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Method is not annotated properly
+     ]]></description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+@Controller
+public class TaskController
+{
+    public ResponseEntity submitTask ()
+    {
+        return new ResponseEntity<>( HttpStatus.CREATED );
+    }
+}
+     ]]></code>
+    </test-code>
+
+    <test-code>
+        <description><![CDATA[
+Method is annotated
+     ]]></description>
+        <expected-problems>0</expected-problems>
+        <code><![CDATA[
+@Controller
+public class TaskController
+{
+    @RequestMapping ( value = "api/task/newtask", method = RequestMethod.POST )
+    public void submitTask ()
+    {
+        //Do stuff without returing
+    }
+}
+     ]]></code>
+    </test-code>
+
+</test-data>

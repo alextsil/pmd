@@ -154,4 +154,31 @@ this.taskRepository = taskRepository;
 
     </rule>
 
+    <rule name="ResponseEntityMethodShouldBeAnnotated"
+          language="java"
+          since="5.6"
+          externalInfoUrl="${pmd.website.baseurl}/rules/java/spring.html#ResponseEntityMethodShouldBeAnnotated"
+          message="Methods returning ResponseEntity should always be annotated with @RequestMapping"
+          class="net.sourceforge.pmd.lang.java.rule.spring.ResponseEntityMethodShouldBeAnnotatedRule">
+        <description>
+            Methods returning ResponseEntity should always be annotated with @RequestMapping
+        </description>
+        <priority>1</priority>
+
+        <example>
+            <![CDATA[
+@Controller
+public class TaskController
+{
+@RequestMapping ( value = "api/task/newtask", method = RequestMethod.POST )
+    public ResponseEntity submitTask ()
+    {
+        return new ResponseEntity<>( HttpStatus.CREATED );
+    }
+}
+   ]]>
+        </example>
+
+    </rule>
+
 </ruleset>
