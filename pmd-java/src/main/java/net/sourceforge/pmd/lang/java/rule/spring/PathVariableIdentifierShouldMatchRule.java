@@ -23,18 +23,21 @@ public class PathVariableIdentifierShouldMatchRule extends AbstractJavaRule
                 .map( t -> t.next.toString() )
                 .collect( Collectors.toList() );
         int indexOfParameter = annotationsStrings.indexOf( "PathVariable" );
-        ASTSingleMemberAnnotation pathVariable = annotations.get( indexOfParameter );
-
-        String pathVariableIdentifierWithQuotes = pathVariable.findChildrenOfType( ASTMemberValue.class )
-                .get( 0 ).jjtGetFirstToken().toString();
-        String pathVariableIdentifier = StringUtils.remove( pathVariableIdentifierWithQuotes, "\"" );
-
-        String paramIdentifier = md.findDescendantsOfType( ASTVariableDeclaratorId.class )
-                .get( indexOfParameter ).getImage();
-
-        if ( !pathVariableIdentifier.equals( paramIdentifier ) )
+        if ( !annotations.isEmpty() )
         {
-            super.addViolation( data, md );
+            ASTSingleMemberAnnotation pathVariable = annotations.get( indexOfParameter );
+
+            String pathVariableIdentifierWithQuotes = pathVariable.findChildrenOfType( ASTMemberValue.class )
+                    .get( 0 ).jjtGetFirstToken().toString();
+            String pathVariableIdentifier = StringUtils.remove( pathVariableIdentifierWithQuotes, "\"" );
+
+            String paramIdentifier = md.findDescendantsOfType( ASTVariableDeclaratorId.class )
+                    .get( indexOfParameter ).getImage();
+
+            if ( !pathVariableIdentifier.equals( paramIdentifier ) )
+            {
+                super.addViolation( data, md );
+            }
         }
         return super.visit( md, data );
     }
